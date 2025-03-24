@@ -1,6 +1,6 @@
 {
-  "name": "@curvu/react",
-  "version": "1.0.1",
+  "name": "@curvu/yarp",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
