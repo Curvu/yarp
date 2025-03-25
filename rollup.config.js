@@ -16,12 +16,13 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      postcss({ extract: true, minimize: true })
+      postcss({ extract: true, minimize: true, modules: true })
     ]
   },
   {
     input: "dist/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "es" }],
-    plugins: [dts()]
+    plugins: [dts()],
+    external: [/\.css$/] // Prevents CSS import errors in .d.ts files
   }
 ];
