@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.module.css';
+import styles from './index.module.scss';
 
 export interface IButton {
   onClick: () => void;
