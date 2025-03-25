@@ -1,0 +1,25 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: none;
+  border-radius: 0.4rem;
+
+  padding: 0.5rem 1rem;
+  /* background-color: $primary; */
+
+  font-size: 1rem;
+  /* color: $text-color; */
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  /* &:hover {
+    background-color: darken($primary, 10%);
+  }
+
+  &:active {
+    background-co~or: darken($primary, 20%);
+  } */
+}
