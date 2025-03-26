@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "sass:color";
+
+$theme-map: null !default;
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    &:global(.#{$theme}) {
+      $theme-map: $map !global;
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @if not $theme-map {
+    @error "theme-map is not defined!";
+  }
+  @return map.get($theme-map, $key);
+}
+
+@function darken($color, $amount) {
+  @return color.adjust($color, $lightness: -$amount);
+}

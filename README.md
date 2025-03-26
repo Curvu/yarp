@@ -11,11 +11,9 @@ Then you can install the package as you would normally do.
 
 ## TODO
 - [ ] Documentation on how to use the hooks (IMPORTANT)
-- [x] Button
-  - [ ] Loading
-  - [ ] Theme
-  - [ ] Disabled
 - [ ] Toggle Button
+- [ ] Switch
+- [ ] Tooltip
 - [ ] Inputs (or forms) (autocomplete)
 - [ ] Card
 - [ ] Toast

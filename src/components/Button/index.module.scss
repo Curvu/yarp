@@ -1,7 +1,4 @@
-@use "sass:color";
-
-$primary: #333;
-$text-color: #fff;
+@use "../../mixins.scss" as *;
 
 .button {
   display: flex;
@@ -11,20 +8,42 @@ $text-color: #fff;
 
   border: none;
   border-radius: 0.4rem;
-
   padding: 0.5rem 1rem;
-  background-color: $primary;
 
   font-size: 1rem;
-  color: $text-color;
   cursor: pointer;
+  user-select: none;
   transition: background-color 0.3s;
 
-  &:hover {
-    background-color: color.adjust($primary, $lightness: -10%);
+  &:disabled {
+    cursor: not-allowed;
   }
+}
 
-  &:active {
-    background-color: color.adjust($primary, $lightness: -20%);
+$themes: (
+  light: (bgColor: #333,
+    txtColor: #ddd,
+  ),
+  dark: (bgColor: #ddd,
+    txtColor: #222,
+  ),
+);
+
+.button {
+  @include themify($themes) {
+    background-color: themed('bgColor');
+    color: themed('txtColor');
+
+    &:hover {
+      background-color: darken(themed('bgColor'), 5%);
+    }
+
+    &:active {
+      background-color: darken(themed('bgColor'), 20%);
+    }
+
+    &:disabled {
+      background-color: darken(themed('bgColor'), -20%);
+    }
   }
 }

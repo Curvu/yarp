@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { fn } from '@storybook/test';
 
 export default {
-  title: "Example/Button",
+  title: "Components/Button",
   component: Button,
   parameters: {
     layout: "centered",
@@ -14,10 +14,34 @@ export default {
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Light: Story = {
   args: {
     children: "Button",
-    onClick: () => console.log("Button clicked"),
   },
 };
 
+export const Dark: Story = {
+  args: {
+    children: "Button",
+    theme: "dark",
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: "Disabled",
+    disabled: true,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    children: "Button",
+    isLoading: true,
+  },
+};
