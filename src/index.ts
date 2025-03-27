@@ -3,4 +3,5 @@ export { useRequest } from './hooks/useRequest';
 
 /* Components */
 import './components/Button/index.module.scss';
-export { IButton, Button } from './components/Button';
+export { Button } from './components/Button';
+export type { IButton } from './components/Button';
