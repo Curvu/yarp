@@ -12,7 +12,7 @@ export interface IButton {
 
 export const Button: React.FC<IButton> = ({ children, onClick, theme = 'light', disabled = false, isLoading = false, className = '' }) => {
   return (
-    <button className={`${styles.button} ${theme} ${className}`} onClick={onClick} disabled={disabled || isLoading}>
+    <button className={`${styles.button} ${styles[theme]} ${className}`} onClick={onClick} disabled={disabled || isLoading}>
       {!isLoading ? children : <span>Loading...</span>}
     </button>
   );

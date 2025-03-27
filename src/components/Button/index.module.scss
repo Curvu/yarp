@@ -1,25 +1,5 @@
 @use "../../mixins.scss" as *;
 
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-
-  border: none;
-  border-radius: 0.4rem;
-  padding: 0.5rem 1rem;
-
-  font-size: 1rem;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s;
-
-  &:disabled {
-    cursor: not-allowed;
-  }
-}
-
 $themes: (
   light: (bgColor: #333,
     txtColor: #ddd,
@@ -29,8 +9,22 @@ $themes: (
   ),
 );
 
-.button {
-  @include themify($themes) {
+@include themify($themes) {
+  &.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+
     background-color: themed('bgColor');
     color: themed('txtColor');
 
@@ -44,6 +38,7 @@ $themes: (
 
     &:disabled {
       background-color: darken(themed('bgColor'), -20%);
+      cursor: not-allowed;
     }
   }
 }

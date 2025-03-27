@@ -5,7 +5,7 @@ $theme-map: null !default;
 
 @mixin themify($themes) {
   @each $theme, $map in $themes {
-    &:global(.#{$theme}) {
+    .#{$theme} {
       $theme-map: $map !global;
       @content;
       $theme-map: null !global;
