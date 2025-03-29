@@ -1,4 +1,4 @@
-import { Button } from '.';
+import { Button } from '@components/Button';
 import { Meta, StoryObj } from "@storybook/react";
 import { fn } from '@storybook/test';
 

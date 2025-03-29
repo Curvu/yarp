@@ -1,0 +1,87 @@
+import { Meta, Controls, Canvas, Story, Stories } from '@storybook/blocks';
+import * as useRequestStories from './useRequest.stories';
+
+<Meta of={useRequestStories} />
+
+# useRequest Hook
+
+A flexible React hook for managing asynchronous operations with built-in state management for loading, error, and data states.
+
+## Basic Usage
+
+```tsx
+function UserProfile() {
+  const fetchUser = async (userId: string) => await fetch(`/api/users/${userId}`);
+
+  const { doRequest, data: user, isLoading, error } = useRequest(fetchUser, {
+    onSuccess: (user) => console.log('User loaded:', user),
+    onError: (err) => console.error('Error loading user:', err)
+  });
+
+  return (
+    <div>
+      <button onClick={() => doRequest('123')} disabled={isLoading}>
+        {isLoading ? 'Loading...' : 'Load Profile'}
+      </button>
+
+      {user && (
+        <div>
+          <h2>{user.name}</h2>
+          <p>Email: {user.email}</p>
+        </div>
+      )}
+
+      {error && <p className="error">Error: {error.message}</p>}
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Hook Parameters
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `requestFunc` | `(...params) => Promise` | `Required` | Async function to execute |
+| `options` | `RequestOptions` | `{}` | Configuration object (optional) |
+
+### RequestOptions
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `onSuccess` | `(data: any) => void` | Callback for successful requests |
+| `onError` | `(error: any) => void` | Callback for failed requests |
+
+### Return Values
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `doRequest` | `(...params) => void` | Function to trigger the request with parameters |
+| `data` | `any \| null` | Contains the response data if the request is successful |
+| `setData` | `(data: any) => void` | Function to manually set the data state |
+| `isLoading` | `boolean` | Indicates if the request is in progress |
+| `error` | `any \| null` | Contains error information if the request fails |
+
+## Best Practices (Typescript Example)
+
+```tsx
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+const fetchUser = async (userId: string): Promise<User> => await fetch(`/api/users/${userId}`);
+
+const { doRequest: getUser, data: user } = useRequest<User>(fetchUser, {
+  onSuccess: (user) => console.log('User loaded:', user),
+  onError: (err) => console.error('Error loading user:', err)
+});
+
+getUser('123');
+
+console.log(user?.name);
+```
+
+<Stories />

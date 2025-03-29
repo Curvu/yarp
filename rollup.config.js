@@ -3,6 +3,14 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import dts from "rollup-plugin-dts";
+import alias from "@rollup/plugin-alias";
+
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default [
   {
@@ -24,7 +32,14 @@ export default [
             if (file.type === "chunk" && file.isEntry)
               file.code = `import "./index.css";\n` + file.code;
         }
-      }
+      },
+      alias({
+        entries: [
+          { find: "@", replacement: path.resolve(__dirname, "src") },
+          { find: "@components", replacement: path.resolve(__dirname, "src/components") },
+          { find: "@hooks", replacement: path.resolve(__dirname, "src/hooks") },
+        ]
+      })
     ]
   },
   {

@@ -8,7 +8,7 @@ interface RequestOptions {
 export const useRequest = (requestFunc: (params?: any) => Promise<any>, options?: RequestOptions) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
 
   const doRequest = useCallback((...params: any[]) => {
     setError(null);

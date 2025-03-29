@@ -8,10 +8,15 @@
     "declarationDir": "dist/types",
     "jsx": "react",
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"]
+    }
   },
   "include": [
     "src",
     "src/types.d.ts"
-  ]
+  ],
 }

@@ -10,7 +10,6 @@ You need to create a `.npmrc` file in your project root directory and add the fo
 Then you can install the package as you would normally do.
 
 ## TODO
-- [ ] Documentation on how to use the hooks (IMPORTANT)
 - [ ] Toggle Button
 - [ ] Switch
 - [ ] Tooltip
