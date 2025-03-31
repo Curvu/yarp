@@ -1,0 +1,53 @@
+@use "../../mixins.scss" as *;
+
+$themes: (
+  light: (
+    bg-color: #333,
+    txt-color: #ddd,
+    bg-active-percent: 25%,
+  ),
+  dark: (
+    bg-color: #eee,
+    txt-color: #222,
+    bg-active-percent: -25%,
+  ),
+);
+
+@include themify($themes) {
+  &.toggleButton {
+    display: flex;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    background-color: themed('bg-color');
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    user-select: none;
+
+    > button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.4rem;
+
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      background-color: transparent;
+      color: themed('txt-color');
+
+      &:hover {
+        background-color: darken(themed('bg-color'), 10%);
+      }
+
+      &.active,
+      &:active {
+        background-color: darken(themed('bg-color'), themed('bg-active-percent'));
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@ You need to create a `.npmrc` file in your project root directory and add the fo
 Then you can install the package as you would normally do.
 
 ## TODO
-- [ ] Toggle Button
+- [ ] Main page for the storybook
 - [ ] Switch
 - [ ] Tooltip
 - [ ] Inputs (or forms) (autocomplete)
@@ -23,3 +23,4 @@ Then you can install the package as you would normally do.
 - [ ] Badges
 - [ ] Datepicker / Calendar
 - [ ] Charts
+- [ ] API Thing

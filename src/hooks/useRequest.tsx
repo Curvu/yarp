@@ -33,5 +33,6 @@ export const useRequest = (requestFunc: (params?: any) => Promise<any>, options?
     setData,
     isLoading,
     error,
+    setError
   };
 };

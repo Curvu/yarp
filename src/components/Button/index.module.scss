@@ -1,10 +1,12 @@
 @use "../../mixins.scss" as *;
 
 $themes: (
-  light: (bgColor: #333,
+  light: (
+    bgColor: #333,
     txtColor: #ddd,
   ),
-  dark: (bgColor: #ddd,
+  dark: (
+    bgColor: #ddd,
     txtColor: #222,
   ),
 );
