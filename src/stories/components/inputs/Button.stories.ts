@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { fn } from '@storybook/test';
 
 export default {
-  title: "Components/Button",
+  title: "Components/Inputs/Button",
   component: Button,
   parameters: {
     layout: "centered",

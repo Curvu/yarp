@@ -11,9 +11,11 @@ Then you can install the package as you would normally do.
 
 ## TODO
 - [ ] Main page for the storybook
-- [ ] Switch
+- [ ] Pagination
+- [ ] Modal
 - [ ] Tooltip
 - [ ] Inputs (or forms) (autocomplete)
+- [ ] Checkbox
 - [ ] Card
 - [ ] Toast
 - [ ] Dropdown

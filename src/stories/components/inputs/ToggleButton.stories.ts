@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {
-  title: "Components/ToggleButton",
+  title: "Components/Inputs/ToggleButton",
   component: ToggleButton,
   parameters: {
     layout: "centered",

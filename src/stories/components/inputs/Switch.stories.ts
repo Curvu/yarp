@@ -3,7 +3,7 @@ import { Switch } from '@components/Switch';
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {
-  title: "Components/Switch",
+  title: "Components/Inputs/Switch",
   component: Switch,
   parameters: {
     layout: "centered",
