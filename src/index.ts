@@ -9,3 +9,7 @@ export type { IButton } from '@components/Button';
 import '@components/ToggleButton/index.module.scss';
 export { ToggleButton } from '@components/ToggleButton';
 export type { IToggleButton, IToggleHandler } from '@components/ToggleButton';
+
+import '@components/Switch/index.module.scss';
+export { Switch } from '@components/Switch';
+export type { ISwitch } from '@components/Switch';

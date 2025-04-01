@@ -1,0 +1,69 @@
+@use "../../mixins.scss" as *;
+
+.switch {
+  cursor: pointer;
+  user-select: none;
+
+  >input {
+    display: none;
+
+    &:checked + .slider {
+      background-color: #06d7a1;
+
+      &::after {
+        left: calc(100% - 2px);
+        transform: translateX(-100%);
+      }
+
+      .icon {
+        left: 5px;
+      }
+    }
+
+    &:disabled + .slider {
+      background-color: #ccc;
+
+      &::after {
+        background-color: darken(#fff, 10%);
+      }
+
+      .icon {
+        color: darken(#fff, 10%);
+      }
+    }
+  }
+
+  .slider {
+    @include size(48px, 27px);
+    background-color: #ef4770;
+    display: block;
+    border-radius: 99px;
+    position: relative;
+
+    &::after {
+      @include size(23px, 23px);
+      content: '';
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .icon {
+      position: absolute;
+      top: 6px;
+      z-index: 1;
+      color: white;
+    }
+
+    .xIcon {
+      font-size: 1.25em;
+      font-weight: 900;
+      top: 4px;
+      left: calc(100% - 23px);
+    }
+  }
+}

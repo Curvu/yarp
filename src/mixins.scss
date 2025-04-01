@@ -23,3 +23,8 @@ $theme-map: null !default;
 @function darken($color, $amount) {
   @return color.adjust($color, $lightness: -$amount);
 }
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
