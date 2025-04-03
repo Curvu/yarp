@@ -13,3 +13,7 @@ export type { IToggleButton, IToggleHandler } from '@components/ToggleButton';
 import '@components/Switch/index.module.scss';
 export { Switch } from '@components/Switch';
 export type { ISwitch } from '@components/Switch';
+
+import '@components/Pagination/index.module.scss';
+export { Pagination } from '@components/Pagination';
+export type { IPagination } from '@components/Pagination';
