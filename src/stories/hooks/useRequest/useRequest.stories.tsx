@@ -70,11 +70,10 @@ const meta: Meta<typeof useRequest> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Success: Story = {
+export const SuccessRequest: Story = {
   render: () => <RequestDemo requestFunc={mockSuccessRequest} />
 };
 
-export const Error: Story = {
+export const ErrorRequest: Story = {
   render: () => <RequestDemo requestFunc={mockErrorRequest} />
 };
-

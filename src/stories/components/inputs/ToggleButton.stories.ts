@@ -36,6 +36,5 @@ export const MultipleOptions: Story = {
       { label: "Option 3", onClick: action("Option 3 clicked") },
       { label: "Option 4", onClick: action("Option 4 clicked") },
     ],
-    theme: "light",
   },
 };
