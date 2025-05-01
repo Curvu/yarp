@@ -5,10 +5,6 @@ import { Meta, StoryObj } from "@storybook/react";
 export default {
   title: "Components/Inputs/Switch",
   component: Switch,
-  parameters: {
-    layout: "centered",
-  },
-  tags: ["autodocs"],
 } as Meta;
 
 type Story = StoryObj<typeof Switch>;

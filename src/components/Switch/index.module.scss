@@ -21,15 +21,7 @@
     }
 
     &:disabled + .slider {
-      background-color: #ccc;
-
-      &::after {
-        background-color: darken(#fff, 10%);
-      }
-
-      .icon {
-        color: darken(#fff, 10%);
-      }
+      opacity: 0.5;
     }
   }
 

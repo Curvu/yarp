@@ -1,47 +1,33 @@
 import { Button } from '@components/Button';
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 export default {
-  title: "Components/Inputs/Button",
+  title: 'Components/Inputs/Button',
   component: Button,
-  parameters: {
-    layout: "centered",
+  args: {
+    onClick: fn(),
   },
-  tags: ["autodocs"],
-  args: { onClick: fn() },
 } as Meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Light: Story = {
+export const Default: Story = {
   args: {
-    children: "Button",
-  },
-};
-
-export const Dark: Story = {
-  args: {
-    children: "Button",
-    theme: "dark",
-  },
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-    },
+    children: 'Button',
   },
 };
 
 export const Disabled: Story = {
   args: {
-    children: "Disabled",
+    children: 'Button',
     disabled: true,
   },
 };
 
 export const Loading: Story = {
   args: {
-    children: "Button",
+    children: 'Button',
     isLoading: true,
   },
 };

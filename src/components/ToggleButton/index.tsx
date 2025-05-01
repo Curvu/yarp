@@ -8,12 +8,11 @@ export interface IToggleButton {
 
 export interface IToggleHandler {
   options: IToggleButton[];
-  theme?: 'light' | 'dark';
   disabled?: boolean;
   className?: string;
 }
 
-export const ToggleButton: React.FC<IToggleHandler> = ({ options, theme = 'light', disabled = false, className = '' }) => {
+export const ToggleButton: React.FC<IToggleHandler> = ({ options, disabled = false, className = '' }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleClick = (index: number) => {
@@ -22,7 +21,7 @@ export const ToggleButton: React.FC<IToggleHandler> = ({ options, theme = 'light
   }
 
   return (
-    <div className={`${styles.toggleButton} ${styles[theme]} ${className} ${disabled ? styles.disabled : ''}`}>
+    <div className={`${styles.toggleButton} ${className} ${disabled ? styles.disabled : ''}`}>
       {options?.map((option, index) => (
         <button
           key={index}

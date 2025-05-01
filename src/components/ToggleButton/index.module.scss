@@ -1,53 +1,48 @@
 @use "../../mixins.scss" as *;
 
-$themes: (
-  light: (
-    bg-color: #333,
-    txt-color: #ddd,
-    bg-active-percent: 25%,
-  ),
-  dark: (
-    bg-color: #eee,
-    txt-color: #222,
-    bg-active-percent: -25%,
-  ),
-);
+$bg-color: #1a1a1a;
+$txt-color: #ddd;
+$bg-active-percent: 25%;
+$border-active-color: #646cff;
 
-@include themify($themes) {
-  &.toggleButton {
+.toggleButton {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  background-color: $bg-color;
+  border-radius: 10px;
+  user-select: none;
+
+  > button {
     display: flex;
-    gap: 0.2rem;
-    padding: 0.2rem;
-    background-color: themed('bg-color');
-    border: 1px solid #ccc;
-    border-radius: 0.4rem;
-    user-select: none;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 
-    > button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
+    border: 1px solid transparent;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
 
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 0.4rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
+    background-color: transparent;
+    color: $txt-color;
 
-      background-color: transparent;
-      color: themed('txt-color');
-
-      &:hover {
-        background-color: darken(themed('bg-color'), 10%);
-      }
-
-      &.active,
-      &:active {
-        background-color: darken(themed('bg-color'), themed('bg-active-percent'));
-      }
+    &:hover {
+      border-color: white;
     }
+
+    &.active,
+    &:active {
+      background-color: darken($bg-color, $bg-active-percent);
+      border-color: $border-active-color;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
   }
 }

@@ -1,14 +1,10 @@
-import { ToggleButton } from '@/components/ToggleButton';
+import { ToggleButton } from '@components/ToggleButton';
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Components/Inputs/ToggleButton",
   component: ToggleButton,
-  parameters: {
-    layout: "centered",
-  },
-  tags: ["autodocs"]
 } as Meta;
 
 type Story = StoryObj<typeof ToggleButton>;
@@ -20,22 +16,16 @@ const defaultArgs = {
   ],
 };
 
-export const Light: Story = {
+export const Default: Story = {
   args: {
     ...defaultArgs,
-    theme: "light",
   },
 };
 
-export const Dark: Story = {
+export const Disabled: Story = {
   args: {
     ...defaultArgs,
-    theme: "dark",
-  },
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-    },
+    disabled: true,
   },
 };
 

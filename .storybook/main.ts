@@ -2,11 +2,11 @@ import type { StorybookConfig } from '@storybook/react-vite';
 import remarkGfm from 'remark-gfm';
 
 const config: StorybookConfig = {
-  "stories": [
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  stories: [
+    '../src/**/*.mdx',
+    '../src/**/*.stories.@(js|jsx|ts|tsx)'
   ],
-  "addons": [
+  addons: [
     {
       name: '@storybook/addon-docs',
       options: {
@@ -17,19 +17,18 @@ const config: StorybookConfig = {
         },
       },
     },
-    "@storybook/addon-essentials",
-    "@storybook/addon-onboarding",
-    "@chromatic-com/storybook",
-    "@storybook/experimental-addon-test",
+    '@storybook/addon-essentials',
+    '@storybook/addon-onboarding',
+    '@chromatic-com/storybook',
+    '@storybook/experimental-addon-test',
     '@storybook/addon-links'
   ],
-  "framework": {
-    "name": "@storybook/react-vite",
-    "options": {}
+  framework: {
+    name: '@storybook/react-vite',
+    options: {}
   },
-  "docs": {
-    "autodocs": true,
-    "defaultName": "Documentation",
+  docs: {
+    defaultName: 'Documentation'
   }
 };
 
