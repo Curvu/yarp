@@ -1,14 +1,7 @@
-@use "../../mixins.scss" as *;
-
-$bg-color: #1a1a1a;
-$txt-color: #ddd;
-$border-color: #646cff;
+@use "../../mixins" as *;
 
 .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+  @include flex(row, center, center, 0.5rem);
 
   border: 1px solid white;
   border-radius: 8px;

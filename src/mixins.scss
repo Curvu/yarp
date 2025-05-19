@@ -1,5 +1,7 @@
 @use "sass:map";
 @use "sass:color";
+@use "globals";
+@forward "globals";
 
 $theme-map: null !default;
 
@@ -27,4 +29,12 @@ $theme-map: null !default;
 @mixin size($width, $height) {
   width: $width;
   height: $height;
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
 }

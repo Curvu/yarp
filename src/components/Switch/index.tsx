@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Check, X } from 'react-bootstrap-icons';
 import styles from './index.module.scss';
 
@@ -10,7 +10,7 @@ export interface ISwitch {
 }
 
 export const Switch: React.FC<ISwitch> = ({ checked, disabled, onChange, className = '' }) => {
-  const [isChecked, setIsChecked] = React.useState(checked || false);
+  const [isChecked, setIsChecked] = useState<boolean>(checked || false);
 
   const handleChange = () => {
     if (!onChange) return;

@@ -13,7 +13,7 @@ export interface IToggleHandler {
 }
 
 export const ToggleButton: React.FC<IToggleHandler> = ({ options, disabled = false, className = '' }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const handleClick = (index: number) => {
     setCurrentIndex(index);
