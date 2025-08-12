@@ -1,5 +1,6 @@
 /* Hooks */
 export { useRequest } from '@hooks/useRequest';
+export { useWebSocket } from '@hooks/useWebSocket';
 
 /* Components */
 import '@components/Button/index.module.scss';
